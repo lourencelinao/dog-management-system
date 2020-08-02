@@ -24,5 +24,8 @@ Route::get('/dogs', 'DogController@index')->name('dog.index');
 Route::get('/application', 'ApplicationController@index')->name('application.index');
 Route::get('/people', 'PeopleController@index')->name('people.index');
 
+Route::get('/show', 'DogController@show')->name('people.show'); // test
+
+
 
 

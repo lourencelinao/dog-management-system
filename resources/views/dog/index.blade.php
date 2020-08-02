@@ -2,11 +2,11 @@
 
 @section('content')
 <!-- blue background -->
-<div class="container-fluid" style="height: 141px; background-color: #1a75ff;">
+<div class="container-fluid bg-light" style="height: 135px;">
     <div class="container-fluid">
         <div class="d-flex align-items-baseline">
-            <div class="pt-3 h3 text-light">Dogs</div>
-            <div class="ml-auto pt-1"><button class="btn btn-light text-primary">Add Dog</button></div>
+            <i class="fa fa-paw fa-2x" aria-hidden="true"></i><div class="pt-3 h3 ml-2"> Dogs</div>
+            <div class="ml-auto pt-1"><button class="btn btn-primary">Add Dog</button></div>
         </div>
     </div>
     <!-- this is where the card starts -->
@@ -28,14 +28,14 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body bg-light">
+            <div class="card-body">
                 <div class="tab-content" id="pills-tabContent">
                     <!-- active dog table-->
                     <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
                         <!-- dynamically displayed --> <!-- can also make your own table code as long as it's efficient -->
-                        <div class="d-flex justify-content-around align-items-center bg-white mb-3" style="height:75px; border-radius: 15px;">
+                        <div class="d-flex justify-content-around align-items-center bg-light mb-3" style="height:75px; border-radius: 15px;">
                             <div>Picture</div>
-                            <a href=""><div>Maya</div></a>
+                            <a href="/show"><div>Maya</div></a>
                             <div>Samoyed</div>
                             <div>6969</div>
                             <div class="dropdown">

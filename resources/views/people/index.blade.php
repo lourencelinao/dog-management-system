@@ -2,11 +2,11 @@
 
 @section('content')
 <!-- blue background -->
-<div class="container-fluid" style="height: 141px; background-color: #1a75ff;">
+<div class="container-fluid bg-light" style="height: 134px;">
     <div class="container-fluid">
         <div class="d-flex align-items-baseline">
-            <div class="pt-3 h3 text-light">People</div>
-            <div class="ml-auto pt-1"><button class="btn btn-light text-primary">Add Person</button></div>
+            <i class="fa fa-user fa-2x"></i><div class="pt-3 h3 ml-2">People</div>
+            <div class="ml-auto pt-1"><button class="btn btn-primary">Add Person</button></div>
         </div>
     </div>
     <!-- this is where the card starts -->
@@ -22,13 +22,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body bg-light">
+            <div class="card-body bg-white">
                 <div class="tab-content" id="pills-tabContent">
                     <!-- active application table-->
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
                         <!-- dynamically displayed --> <!-- can also make your own table code as long as it's efficient -->
                         <!-- users table --> <!--this is just a placeholder -->
-                        <div class="d-flex justify-content-around align-items-center bg-white mb-3" style="height:75px; border-radius: 15px;">
+                        <div class="d-flex justify-content-around align-items-center bg-light mb-3" style="height:75px; border-radius: 15px;">
                             <div>Picture</div>
                             <a href=""><div>Users</div></a>
                             <div>Samoyed</div>

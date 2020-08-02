@@ -15,4 +15,9 @@ class DogController extends Controller
     public function index(){
         return view('dog.index');
     }
+
+    //test
+    public function show(){
+        return view('dog.show');
+    }
 }

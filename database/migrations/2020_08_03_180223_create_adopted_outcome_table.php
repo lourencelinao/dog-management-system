@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApplicationsTable extends Migration
+class CreateAdoptedOutcomeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateApplicationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('applications', function (Blueprint $table) {
+        Schema::create('adopted_outcome', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('people_id');
-            $table->date('date_received');
-            $table->unsignedBigInteger('applicationable_id');
-            $table->enum('applicationable_type', ['Adoption', 'Surrender', 'Volunteer']);
             $table->timestamps();
 
             $table->index('people_id');
@@ -32,6 +29,6 @@ class CreateApplicationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('applications');
+        Schema::dropIfExists('adopted_outcome');
     }
 }

@@ -5,8 +5,7 @@
 <div class="container-fluid bg-light" style="height: 134px;">
     <div class="container-fluid">
         <div class="d-flex align-items-baseline">
-            <i class="fa fa-user fa-2x"></i><div class="pt-3 h3 ml-2">People</div>
-            <div class="ml-auto pt-1"><button class="btn btn-primary">Add Person</button></div>
+            <i class="fa fa-user fa-2x"></i><div class="pt-3 h3 ml-2"><a href="/people" class="text-primary">People</a> / User Name</div> <!-- echo user name here -->
         </div>
     </div>
     <!-- this is where the card starts -->
@@ -15,19 +14,24 @@
             <div class="card-header bg-white">
                 <ul class="nav nav-pills" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="pills-users-tab" data-toggle="pill" href="#pills-users" role="tab" aria-controls="pills-users" aria-selected="true">Users</a>
+                        <a class="nav-link active" id="pills-information-tab" data-toggle="pill" href="#pills-information" role="tab" aria-controls="pills-information" aria-selected="true">Information</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-people-tab" data-toggle="pill" href="#pills-people" role="tab" aria-controls="pills-people" aria-selected="false">People</a>
+                        <a class="nav-link" id="pills-adoption-tab" data-toggle="pill" href="#pills-adoption" role="tab" aria-controls="pills-adoption" aria-selected="false">Adoption History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-surrender-tab" data-toggle="pill" href="#pills-surrender" role="tab" aria-controls="pills-surrender" aria-selected="false">Surrender History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-applications-tab" data-toggle="pill" href="#pills-applications" role="tab" aria-controls="pills-applications" aria-selected="false">Applications</a>
                     </li>
                 </ul>
             </div>
             <div class="card-body bg-light">
                 <div class="tab-content" id="pills-tabContent">
-                    <!-- active application table-->
-                    <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
-                        <!-- dynamically displayed --> <!-- can also make your own table code as long as it's efficient -->
-                        <!-- users table --> <!--this is just a placeholder -->
+                    <!-- active user table-->
+                    <!--
+                    <div class="tab-pane fade show active" id="pills-information" role="tabpanel" aria-labelledby="pills-information-tab">
                         <div class="d-flex justify-content-around align-items-center bg-white mb-3" style="height:75px; border-radius: 15px;">
                             <div>Picture</div>
                             <a href=""><div>Users</div></a>
@@ -43,18 +47,8 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                    <!-- people application table-->
-                    <div class="tab-pane fade" id="pills-people" role="tabpanel" aria-labelledby="pills-people-tab">
-                        <div class="d-flex justify-content-around align-items-center bg-white" style="height:75px; border-radius: 15px;">
-                            <div>Picture</div>
-                            <a href="/UserShow"><div>People</div></a>
-                            <div>Samoyed</div>
-                            <div>6969</div>
-                            <div><button class="btn btn-light btn-sm"><i class="fa fa-ellipsis-h"></i></button></div>
-                        </div>
-                    </div>
+                    -->
                 </div>
             </div>
         </div>

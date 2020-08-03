@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateVeterinariansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,16 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('veterinarians', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('people_id')->nullable();
-            $table->enum('position', ['Admin', 'Manager', 'Staff', 'Volunteer']);
-            $table->string('password');
+            $table->unsignedBigInteger('clinic_id');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->unsignedInteger('contact_number');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
             $table->timestamps();
 
-            $table->index('people_id');
+            $table->index('clinic_id');
         });
     }
 
@@ -34,6 +33,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('veterinarians');
     }
 }

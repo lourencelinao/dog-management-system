@@ -28,14 +28,14 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body">
+            <div class="card-body bg-light">
                 <div class="tab-content" id="pills-tabContent">
                     <!-- active dog table-->
                     <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
                         <!-- dynamically displayed --> <!-- can also make your own table code as long as it's efficient -->
-                        <div class="d-flex justify-content-around align-items-center bg-light mb-3" style="height:75px; border-radius: 15px;">
+                        <div class="d-flex justify-content-around align-items-center bg-white mb-3" style="height:75px; border-radius: 15px;">
                             <div>Picture</div>
-                            <a href="/show"><div>Maya</div></a>
+                            <a href="/DogShow"><div>Maya</div></a>
                             <div>Samoyed</div>
                             <div>6969</div>
                             <div class="dropdown">

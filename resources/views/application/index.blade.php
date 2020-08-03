@@ -24,13 +24,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body bg-white">
+            <div class="card-body bg-light">
                 <div class="tab-content" id="pills-tabContent">
                     <!-- active application table-->
                     <div class="tab-pane fade show active" id="pills-adoption" role="tabpanel" aria-labelledby="pills-adoption-tab">
                         <!-- dynamically displayed --> <!-- can also make your own table code as long as it's efficient -->
                         <!-- adoption application table -->
-                        <div class="d-flex justify-content-around align-items-center bg-light mb-3" style="height:75px; border-radius: 15px;">
+                        <div class="d-flex justify-content-around align-items-center bg-white mb-3" style="height:75px; border-radius: 15px;">
                             <div>Picture</div>
                             <a href=""><div>Adoption</div></a>
                             <div>Samoyed</div>

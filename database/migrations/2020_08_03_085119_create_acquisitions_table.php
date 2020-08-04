@@ -17,7 +17,7 @@ class CreateAcquisitionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('dog_id');
             $table->unsignedBigInteger('acquisitionable_id');
-            $table->enum('acquisitionable_type', ['Surrendered', 'Rescued', 'Transferee']);
+            $table->string('acquisitionable_type');
             $table->text('health_condition');
             $table->date('acquisition_date'); // ->default(now());
             $table->timestamps();

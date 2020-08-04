@@ -15,12 +15,10 @@ class CreateVolunteerApplicationsTable extends Migration
     {
         Schema::create('volunteer_applications', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('people_id');
             $table->enum('experience_in_handling_dogs', ['Yes', 'No']);
             $table->text('experience_description');
             $table->timestamps();
 
-            $table->index('people_id');
         });
     }
 

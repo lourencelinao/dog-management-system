@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('people_id')->nullable();
+            $table->unsignedBigInteger('people_id')->nullable(); //might remove nullable, acccess users through the people model
             $table->enum('position', ['Admin', 'Manager', 'Staff', 'Volunteer']);
             $table->string('password');
             $table->string('email')->unique();

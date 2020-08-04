@@ -10,4 +10,12 @@ class People extends Model
     public function users(){
         return $this->hasMany('App\User');
     }
+
+    public function images(){
+        return $this->morphMany('App\Image', 'imageable');
+    }
+
+    public function user(){
+        return $this->hasOne('App\User');
+    }
 }

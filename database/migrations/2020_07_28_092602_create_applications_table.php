@@ -18,7 +18,7 @@ class CreateApplicationsTable extends Migration
             $table->unsignedBigInteger('people_id');
             $table->date('date_received');
             $table->unsignedBigInteger('applicationable_id');
-            $table->enum('applicationable_type', ['Adoption', 'Surrender', 'Volunteer']);
+            $table->string('applicationable_type');
             $table->timestamps();
 
             $table->index('people_id');

@@ -18,7 +18,7 @@ class CreateOutcomesTable extends Migration
             $table->unsignedBigInteger('dog_id');
             $table->date('outcome_date');
             $table->unsignedBigInteger('outcomeable_id');
-            $table->enum('outcomeable_type', ['Adoption', 'Transferred']);
+            $table->string('outcomeable_type');
             $table->timestamps();
 
         });

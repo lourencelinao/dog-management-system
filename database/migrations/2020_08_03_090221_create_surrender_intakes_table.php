@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMedicalHistoriesTable extends Migration
+class CreateSurrenderIntakesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateMedicalHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('medical_histories', function (Blueprint $table) {
+        Schema::create('surrender_intakes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('people_id');
+            $table->longText('reason_of_surrender');
             $table->timestamps();
+
+            $table->index('people_id');
         });
     }
 
@@ -26,6 +30,6 @@ class CreateMedicalHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medical_histories');
+        Schema::dropIfExists('surrender_intakes');
     }
 }

@@ -41,8 +41,5 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Dog');
     }
 
-    public function people(){
-        return $this->hasOne('App\People');
-    }
 
 }

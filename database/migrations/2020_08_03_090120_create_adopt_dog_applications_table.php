@@ -19,12 +19,15 @@ class CreateAdoptDogApplicationsTable extends Migration
             $table->enum('does_have_other_pet', ['Yes', 'No']);
             $table->string('other_pet_breed')->nullable();
             $table->text('behavior_towards_dogs')->nullable();
+            $table->enum('residence_type', ['Apartment', 'House', 'Condo', 'Other(please specify)']);
+            $table->string('residence_specify')->nullable();
             $table->enum('owned_or_rent', ['Owned', 'Rent']);
-            $table->enum('does_have_a_yard', ['Yes', 'No']);
-            $table->enum('is_yard_fenced', ['Yes', 'No'])->nullable();
+            //$table->enum('does_have_a_yard', ['Yes', 'No']);
+           //$table->enum('is_yard_fenced', ['Yes', 'No'])->nullable();
             $table->string('landlord_name')->nullable();
-            $table->unsignedInteger('landlord_contact_number')->nullable();          
-            $table->longtext('references');
+            $table->unsignedInteger('landlord_contact_number')->nullable();
+            $table->enum('does_have_children', ['Yes', 'No']);
+            $table->string('children_ages')->nullable();             
             $table->timestamps();
             
             $table->index('dog_id');

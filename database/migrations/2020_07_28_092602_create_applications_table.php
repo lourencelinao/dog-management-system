@@ -16,7 +16,8 @@ class CreateApplicationsTable extends Migration
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('people_id');
-            $table->date('date_received');
+            $table->longText('comment')->nullable();
+            $table->enum('status', ['Open', 'Closed'])->default('Open'); //include Screening??
             $table->unsignedBigInteger('applicationable_id');
             $table->string('applicationable_type');
             $table->timestamps();

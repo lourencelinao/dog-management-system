@@ -15,7 +15,4 @@ class People extends Model
         return $this->morphMany('App\Image', 'imageable');
     }
 
-    public function user(){
-        return $this->hasOne('App\User');
-    }
 }

@@ -16,10 +16,10 @@ class CreateVeterinariansTable extends Migration
         Schema::create('veterinarians', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('clinic_id');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->unsignedInteger('contact_number');
-            $table->string('email')->unique();
+            $table->string('name');
+            //$table->string('lastname');
+            //$table->unsignedInteger('contact_number');
+            //$table->string('email')->unique();
             $table->timestamps();
 
             $table->index('clinic_id');

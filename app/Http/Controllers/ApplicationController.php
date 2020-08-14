@@ -15,4 +15,8 @@ class ApplicationController extends Controller
     public function index(){
         return view('application.index');
     }
+
+    public function show(){
+        return view('application.show');
+    }
 }

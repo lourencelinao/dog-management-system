@@ -8,11 +8,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dashboard</title> <!-- must be changed dynamically depending on the page -->
+    <title>Paw Management - @yield('title')</title> <!-- must be changed dynamically depending on the page -->
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/custom.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,30 +27,33 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
+    <!-- dog-medical CDN for data tables -->
+    @stack('css')
+
 </head>
-<body class="bg-white"> <!-- class="sb-nav-fixed" -->
+<body class="bg-light" style="margin-bottom: 65px;"> <!-- class="sb-nav-fixed" -->
     <div class="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" id="navbar_light1">
             <a href="/" class="navbar-brand">Paw Management</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a href="/dashboard" class="nav-link">Dashboard
+                <ul class="navbar-nav" id="nav_pill">
+                    <li class="nav-item {{Request::is('dashboard') ? 'active' : ''}}">
+                        <a href="/dashboard" class="nav-link text-dark">Dashboard
                         </a>
                         <div class="underline"></div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{Request::is('dogs*') ? 'active' : ''}}">
                         <a href="/dogs" class="nav-link text-dark">Dogs</a>
                         <div class="underline"></div>
                     </li>
-                    <li class="nav-item">
-                        <a href="/application" class="nav-link text-dark">Application</a>
+                    <li class="nav-item {{Request::is('applications*') ? 'active' : ''}}">
+                        <a href="/applications" class="nav-link text-dark">Applications</a>
                         <div class="underline"></div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{Request::is('people*') ? 'active' : ''}}">
                         <a href="/people" class="nav-link text-dark">People</a>
                         <div class="underline"></div>
                     </li>       
@@ -63,10 +68,12 @@
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                Welcome, {{ Auth::user()->firstname }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <!-- shelter settings should be available when the user is an admin -->
+                                <a class="dropdown-item" href="#">Shelter Settings</a>
                                 <a class="dropdown-item" href="#">Profile</a>
                                 <a class="dropdown-item" href="#"
                                    onclick="event.preventDefault();
@@ -90,7 +97,8 @@
     </div>
         
         <!-- custom -->
-        
+        <script src="{{ asset('js/custom.js') }}" ></script>
+        @stack('scripts')
     </div>
 </body>
 </html>

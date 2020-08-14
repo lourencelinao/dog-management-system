@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAcquisitionsTable extends Migration
+class CreateIntakesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateAcquisitionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('acquisitions', function (Blueprint $table) {
+        Schema::create('intakes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('dog_id');
-            $table->unsignedBigInteger('acquisitionable_id');
-            $table->string('acquisitionable_type');
+            $table->unsignedBigInteger('intakeable_id');
+            $table->string('intakeable_type');
             $table->text('health_condition');
-            $table->date('acquisition_date'); // ->default(now());
+            $table->date('intake_date'); // ->default(now());
             $table->timestamps();
 
             $table->index('dog_id');
@@ -33,6 +33,6 @@ class CreateAcquisitionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('acquisitions');
+        Schema::dropIfExists('intakes');
     }
 }

@@ -15,15 +15,18 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('people_id')->nullable(); //might remove nullable, acccess users through the people model
+            $table->string('firstname');
+            $table->string('lastname');
             $table->enum('position', ['Admin', 'Manager', 'Staff', 'Volunteer']);
             $table->string('password');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->enum('status', ['Active', 'Inactive'])->default('Active');
+            $table->string('img')->nullable();
             $table->rememberToken();
             $table->timestamps();
 
-            $table->index('people_id');
+            //$table->index('people_id');
         });
     }
 

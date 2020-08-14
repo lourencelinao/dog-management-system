@@ -17,14 +17,15 @@ class CreatePeopleTable extends Migration
             $table->id();
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
+            $table->unsignedBigInteger('contact_number');
+            $table->string('email')->unique();
+            $table->date('dob');
+            $table->enum('sex', ['Male', 'Female']);
             $table->string('address1')->nullable();
             $table->string('address2')->nullable();
             $table->string('city')->nullable();
             $table->string('province')->nullable();
             $table->unsignedInteger('zip_code')->nullable();
-            $table->unsignedBigInteger('contact_number');
-            $table->string('email')->unique();
-            $table->enum('type', ['user', 'non_user'])->default('non_user'); 
             $table->timestamps();
         });
     }

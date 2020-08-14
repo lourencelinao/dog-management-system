@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRescueAcquisitionsTable extends Migration
+class CreateTransfereeIntakesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateRescueAcquisitionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rescue_acquisitions', function (Blueprint $table) {
+        Schema::create('transferee_intakes', function (Blueprint $table) {
             $table->id();
+            $table->string('shelter_name');
             $table->string('address1')->nullable();
             $table->string('address2')->nullable();
             $table->string('city')->nullable();
@@ -31,6 +32,6 @@ class CreateRescueAcquisitionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rescue_acquisitions');
+        Schema::dropIfExists('transferee_intakes');
     }
 }

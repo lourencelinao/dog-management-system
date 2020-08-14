@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSurrenderAcquisitionsTable extends Migration
+class CreateVaccinationRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateSurrenderAcquisitionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('surrender_acquisitions', function (Blueprint $table) {
+        Schema::create('vaccination_records', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('people_id');
-            $table->longText('reason_of_surrender');
             $table->timestamps();
-
-            $table->index('people_id');
         });
     }
 
@@ -30,6 +26,6 @@ class CreateSurrenderAcquisitionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('surrender_acquisitions');
+        Schema::dropIfExists('vaccination_records');
     }
 }
